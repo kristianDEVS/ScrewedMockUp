@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get hardware, power tools, and hand tools of the highest caliber at the most competitive prices only at Screwed Hardware, when in doubt, screw it and work it out!!">
+    <meta name="keywords" content="buy tools online, power tools, hand tools, best tool deals, home improvement tools">
+    <title>Shop, Deals and Promotions, Contact Us, Screwed Hardware</title>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        
+        /* Color Palette */
+        :root {
+            --primary-color: #164391;    /* Primary Blue */
+            --secondary-color: #b6bfce;  /* Light Blue-Gray */
+            --accent-color: #a6afbf;     /* Medium Blue-Gray */
+            --white: #ffffff;
+            --light-gray: #f4f6f9;
+            --dark-gray: #333333;
+        }
+
+        /* Layout Structure - Modified for full width */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Header Top Section */
+        .header-top {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            border: 1px solid #ddd;
+            height: 100px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+
+        /* Modified for logo image */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 70px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .login-register a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid #ddd;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Promotional Banner */
+        .promotional-banner {
+            height: 400px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            position: relative;
+        }
+
+        .banner-content {
+            text-align: center;
+            color: var(--primary-color);
+            z-index: 2;
+        }
+
+        .banner-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .slider-navigation {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 40px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .products-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: var(--light-gray);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            border: 1px solid #ddd;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Social links with Bootstrap icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .feedback-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .feedback-form button {
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-top {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-container, .search-container, .login-container {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                height: auto;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .promotional-banner {
+                height: 300px;
+            }
+            
+            .banner-content h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Top Section -->
+        <div class="header-top">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Screwed Hardware Logo">
+                    <div class="logo-text">Screwed Hardware</div>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button>Search</button>
+                </div>
+            </div>
+            <div class="login-container">
+                <div class="login-register">
+                    <a href="#">Login</a> / <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </div>
+
+        <!-- Promotional Banner - Image Slider -->
+        <div class="promotional-banner">
+            <div class="banner-content">
+                <h1>When In Doubt, Screw It and Work It Out!</h1>
+                <p>Get hardware, power tools, and hand tools of the highest caliber at the most competitive prices.</p>
+            </div>
+            <div class="slider-navigation">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-products">
+            <h2 class="products-title">Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/drill.png" alt="18V Cordless Drill">
+                    </div>
+                    <div class="product-title">18V Cordless Drill</div>
+                    <div class="product-price">$99.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/toolbox.png" alt="Professional Tool Box">
+                    </div>
+                    <div class="product-title">Professional Tool Box</div>
+                    <div class="product-price">$59.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/screwdriver.png" alt="42-Piece Screwdriver Set">
+                    </div>
+                    <div class="product-title">42-Piece Screwdriver Set</div>
+                    <div class="product-price">$34.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/saw.png   " alt="Cordless Circular Saw">
+                    </div>
+                    <div class="product-title">Cordless Circular Saw</div>
+                    <div class="product-price">$129.99</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>69 Coffee Street</li>
+                        <li>San Fernando, Trinidad</li>
+                        <li>Phone: (868) 770-8065</li>
+                        <li>Email: info@screwed.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Feedback Form</h3>
+                    <form class="feedback-form">
+                        <input type="email" placeholder="Your email">
+                        <textarea placeholder="Your message" rows="3"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Screwed Hardware. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
