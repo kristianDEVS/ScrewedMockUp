@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Screwed Hardware's history, mission, and the team behind the best tools and hardware store in Trinidad.">
+    <meta name="keywords" content="hardware store, about us, tool experts, hardware history, tool professionals">
+    <title>About Us - Screwed Hardware</title>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        
+        /* Color Palette */
+        :root {
+            --primary-color: #164391;    /* Primary Blue */
+            --secondary-color: #b6bfce;  /* Light Blue-Gray */
+            --accent-color: #a6afbf;     /* Medium Blue-Gray */
+            --white: #ffffff;
+            --light-gray: #f4f6f9;
+            --dark-gray: #333333;
+        }
+
+        /* Layout Structure */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Header Top Section */
+        .header-top {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            border: 1px solid #ddd;
+            height: 100px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 70px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .login-register a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid #ddd;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--secondary-color);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .page-header h1 {
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            color: var(--dark-gray);
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About Us Content */
+        .about-content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .section-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-text {
+            line-height: 1.6;
+        }
+
+        .section-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-name {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .value-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .value-description {
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            border: 1px solid #ddd;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Social links with Bootstrap icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .feedback-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .feedback-form button {
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-top {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-container, .search-container, .login-container {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                height: auto;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .section-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-image {
+                order: -1;
+            }
+            
+            .team-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Top Section -->
+        <div class="header-top">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="aboutUsPage/imgAboutUs/logo_ABOUT_US.png" alt="Screwed Hardware Logo">
+                    <div class="logo-text">Screwed Hardware</div>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button>Search</button>
+                </div>
+            </div>
+            <div class="login-container">
+                <div class="login-register">
+                    <a href="userinput.html">Login</a> / <a href="userinput.html">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="product.html">Deals</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactUs.html">Contacts</a></li>
+            </ul>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>About Screwed Hardware</h1>
+            <p>We've been providing quality tools and hardware solutions since 1985. Get to know the people behind Trinidad's most trusted hardware store.</p>
+        </div>
+
+        <!-- About Us Content -->
+        <div class="about-content">
+            <!-- Our Story Section -->
+            <div class="section">
+                <h2 class="section-title">Our Story</h2>
+                <div class="section-content">
+                    <div class="section-text">
+                        <p>Screwed Hardware began as a small family-owned shop in 1985 when Elaina and Krisgringo Screwes opened their first location on Coffee Street in San Fernando. With just 500 square feet of retail space and a passion for quality tools, they set out to create a hardware store that would become a cornerstone of the community.</p>
+                        <p>Over the decades, we've grown from that humble beginning to become Trinidad's premier destination for hardware, power tools, and home improvement solutions. Now with three locations across the island, we continue to uphold the same values that guided our founders: quality products, fair prices, and exceptional service.</p>
+                        <p>While we've expanded our inventory and embraced modern technology, we've never lost the personal touch that makes Screwed Hardware special. Many of our employees have been with us for over 20 years, creating lasting relationships with the customers we serve.</p>
+                    </div>
+                    <img src="imgAboutUs/aboutus.jpg" alt="Original Screwed Hardware Store from 1985" class="section-image">
+                </div>
+            </div>
+
+            <!-- Our Mission Section -->
+            <div class="section">
+                <h2 class="section-title">Our Mission</h2>
+                <div class="section-content">
+                    <img src="imgAboutUs/about_us_team.jpg" alt="Screwed Hardware Team" class="section-image">
+                    <div class="section-text">
+                        <p>At Screwed Hardware, our mission is to empower our customers with the right tools, knowledge, and support to tackle any project with confidence. We believe that with the proper equipment and guidance, anyone can become a capable DIYer or professional.</p>
+                        <p>We are committed to:</p>
+                        <p>• Providing high-quality, reliable tools that stand the test of time<br>
+                        • Offering competitive prices without compromising on quality<br>
+                        • Sharing our expertise through exceptional customer service<br>
+                        • Supporting our local community through employment and outreach programs<br>
+                        • Promoting sustainable practices in construction and home improvement</p>
+                        <p>Whether you're a professional contractor or a weekend warrior, we're here to help you get the job done right.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Values Section -->
+            <div class="section">
+                <h2 class="section-title">Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <h3 class="value-title">Quality First</h3>
+                        <p class="value-description">We carefully curate our inventory to offer only the highest quality tools and hardware that we would use ourselves.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3 class="value-title">Community Focus</h3>
+                        <p class="value-description">We believe in giving back to the communities we serve through sponsorships, donations, and educational workshops.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-lightbulb-fill"></i>
+                        </div>
+                        <h3 class="value-title">Knowledge Sharing</h3>
+                        <p class="value-description">We're passionate about education and helping our customers learn the skills they need to succeed in their projects.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-tree-fill"></i>
+                        </div>
+                        <h3 class="value-title">Sustainability</h3>
+                        <p class="value-description">We're committed to environmental responsibility in our operations and promoting eco-friendly options for our customers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet Our Team Section -->
+            <div class="section team-section">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p>The dedicated professionals who make Screwed Hardware your go-to destination for all things tools.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="imgAboutUs/woman.jpg" alt="Elaina Screwes" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Elaina Screwes</h3>
+                            <p class="member-position">Co-Founder & CEO</p>
+                            <p class="member-bio">Maria co-founded Screwed Hardware in 1985 and continues to guide our company's vision. With over 40 years in the industry, her expertise in hardware retail is unmatched.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="imgAboutUs/man.jpg" alt="Carlos Rodriguez" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Carlos Rodriguez</h3>
+                            <p class="member-position">Operations Manager</p>
+                            <p class="member-bio">Carlos oversees our day-to-day operations across all locations. His background in logistics ensures our stores are always well-stocked with exactly what you need.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="imgAboutUs/woman2.jpg" alt="Sarah Johnson" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Sarah Johnson</h3>
+                            <p class="member-position">Head of Power Tools</p>
+                            <p class="member-bio">Sarah's passion for power tools is evident in her 15 years of experience. She personally tests every new power tool before it reaches our shelves.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="imgAboutUs/man 2.jpg" alt="Marcus Williams" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Marcus Williams</h3>
+                            <p class="member-position">Customer Service Director</p>
+                            <p class="member-bio">Marcus leads our customer service team with his philosophy of treating every customer like family. He's been with Screwed Hardware for over 20 years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>69 Coffee Street</li>
+                        <li>San Fernando, Trinidad</li>
+                        <li>Phone: (868) 770-8065</li>
+                        <li>Email: info@screwed.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Feedback Form</h3>
+                    <form class="feedback-form">
+                        <input type="email" placeholder="Your email">
+                        <textarea placeholder="Your message" rows="3"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Screwed Hardware. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
